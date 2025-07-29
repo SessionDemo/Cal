@@ -64,6 +64,12 @@ jobs:
      
     - name: maven job
       run: mvn -X war:war
+    - name: upload Artifact
+      uses: actions/upload-artifact@v4
+      with: 
+        name: webapp
+        path: target/*.war
+  
 
   
     
