@@ -40,6 +40,7 @@ jobs:
       packages: write
       checks: write
     steps:
+    - run: echo should run unit tests
     - name: Checkout code
       uses: actions/checkout@v1
     - name: maven job
