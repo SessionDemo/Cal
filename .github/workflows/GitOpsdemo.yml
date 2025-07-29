@@ -20,7 +20,7 @@ jobs:
       with:
         java-version: 1.8
     - name: maven job
-      run: mvn -B clean --file pox.xml
+      run: mvn -B clean --file pom.xml
       
     
   
