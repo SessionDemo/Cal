@@ -49,13 +49,13 @@ jobs:
       with:
         files: "target/surefire-reports/*.xml"
   CodeCoverage:
-   runs-on: ubuntu-latest
-   needs: UnitTesting
-   permissions:
+    runs-on: ubuntu-latest
+    needs: UnitTesting
+    permissions:
       contents: read
       packages: write
       checks: write
-   steps:
+    steps:
     - name: Checkout code
       uses: actions/checkout@v1
     - name: maven job
