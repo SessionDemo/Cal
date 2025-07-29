@@ -41,7 +41,7 @@ jobs:
       checks: write
     steps:
     - run: echo should run unit Tests
-    - uses: actions/checkout@v2  
+    - uses: actions/checkout@v4 
     - name: UnitTesting with Maven
       run: mvn -B test --file pom.xml
     - name: Publish Unit Test Results
