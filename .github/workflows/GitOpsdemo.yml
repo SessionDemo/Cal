@@ -64,11 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: CodeCoverage
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDk 1.8
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
+    - uses: actions/checkout@v1
     - name: maven job
       run: mvn -X war:war
       
