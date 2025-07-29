@@ -35,6 +35,10 @@ jobs:
   UnitTesting:
     runs-on: ubuntu-latest
     needs: Compile
+    permissions:
+      contents: read
+      packages: write
+      checks: write
     steps:
     - run: echo should run unit Tests
     - uses: actions/checkout@v2  
