@@ -49,7 +49,7 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
     - name: Sonarcloud Scan
-      run: mvn -X org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      run: mvn -X verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       env:
          SONAR_TOKEN: ${{ secrets.SATOKEN }}
          GITHUB_TOKEN: ${{ secrets.GATOKEN }}
