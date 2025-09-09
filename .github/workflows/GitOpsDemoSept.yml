@@ -27,6 +27,7 @@ jobs:
       run: mvn -B compile --file pom.xml
   UnitTesting:
     runs-on: ubuntu-latest
+    needs: SetupAndCompile
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
