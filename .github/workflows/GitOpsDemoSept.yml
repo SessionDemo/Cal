@@ -47,7 +47,7 @@ jobs:
       env:
         github-token: ${{ secrets.GATOKEN }}
         sonar-token: ${{ secrets.SATOKEN }}
-      run:  mvn -X verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      run: mvn -X verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
 
   UnitTesting:
     runs-on: ubuntu-latest
