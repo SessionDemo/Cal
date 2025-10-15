@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: setup java JDK 1.8
-      uses: action/setup-java@v1
+    - name: setup java JDK 17
+      uses: action/setup-java@v4
       with:
-        java-version: 1.8
+        java-version: 17
     - name: maven clean
       run: mvn -B clean --file pom.xml
   Compile:
