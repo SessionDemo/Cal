@@ -29,6 +29,9 @@ jobs:
         java-version: 1.8
     - name: maven compile
       run: mvn -B compile --file pom.xml
+  StaticAnalysis:
+    runs-on: ubuntu-latest
+    needs: Compile
   UnitTestingAndCodecoverage:
     runs-on: ubuntu-latest
     needs: Compile
@@ -49,7 +52,7 @@ jobs:
       run: mvn -X org.jacoco:jacoco-maven-plugin:report
   war:
     runs-on: ubuntu-latest
-    needs: Compile
+    needs: UnitTestingAndCodecoverage
     permissions:
       contents: read
       packages: write
