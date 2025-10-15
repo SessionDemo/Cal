@@ -1,0 +1,29 @@
+name: DevOpsPipeline
+on:
+  push:
+    branches: ["master"]
+    
+jobs:
+  Setup:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: action/checkout@v2
+    - name: setup java JDK 1.8
+      uses: action/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: maven clean
+      run: mvn -B clean --file pom.xml
+  Compile:
+    runs-on: ubuntu-latest
+    needs: Setup
+    steps:
+    - uses: action/checkout@v2
+    - name: setup java JDK 1.8
+      uses: action/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: maven compile
+      run: mvn -B compile --file pom.xml
+  # UnitTesting:
+  
